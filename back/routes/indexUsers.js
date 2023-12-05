@@ -1,5 +1,5 @@
 import express from 'express'
-import accountController from '../controllers/usersController.js'
+import usersController from '../controllers/usersController.js'
 import { validateAccount, validateAccount2, verifySession } from '../middlewares/usersMiddleware.js'
 
 const route = express.Router()
@@ -7,19 +7,19 @@ const route = express.Router()
 /// registro
 
 //Crea un usuario
-route.post('/', [validateAccount], accountController.createAccount)
+route.post('/', [validateAccount], usersController.createAccount)
 
 // Trae los usuarios
-route.get('/', accountController.getAccount)
+route.get('/', usersController.getAccount)
 // Eliminar usuario
-route.delete('/:idUser', accountController.deleteAccount)
+route.delete('/:idUser', usersController.deleteAccount)
 // editar usuario
-route.put('/:idUser', accountController.updateAccount)
+route.put('/:idUser', usersController.updateAccount)
 
 
 // auth/login
-route.post('/session', [validateAccount2], accountController.login)
+route.post('/session', [validateAccount2], usersController.login)
 // logout
-route.delete('/session', [verifySession], accountController.logout)
+route.delete('/session', [verifySession], usersController.logout)
 
 export default route

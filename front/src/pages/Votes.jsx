@@ -9,11 +9,13 @@ const Votes = () => {
   //console.log(juez_id)
   // const juegoID = selectedUser.name
   const [error, setError] = useState(null);
+  const [msjBien, setMsjBien] = useState(null);
 
   const [jugabilidad, setJugabilidad] = useState('')
   const [arte, setArte] = useState('')
   const [sonido, setSonido] = useState('')
   const [afinidad, setAfinidad] = useState('')
+  
 
   const [selectedGame, setSelectedGame] = useState(null);
   const navigate = useNavigate()
@@ -84,9 +86,11 @@ const Votes = () => {
     .then((result)=>{
       console.log(result)
       navigate('/Votes', {replace: true})
+      setMsjBien('Juego votado con exito');
       setError(null)
       })
       .catch(()=>{
+        setMsjBien(null);
         setError('Tenga en cuenta que un juez no puede votar 2 veces el mismo juego, y los valores del voto deben ser del 1 al 10'); // Establecer el mensaje de error
         console.error('Ah ocurrido un error:', error);
       })
@@ -116,6 +120,7 @@ const Votes = () => {
         <form onSubmit={handleFormSubmit}>
             <h3>Votar: {selectedGame.name}</h3>
             {error && <p className='loginError'>{error}</p>} {/* Mostrar mensaje de error si existe */}
+            {msjBien && <p className=''>{msjBien}</p>} {/* Mostrar mensaje de error si existe */}
             <div>
               <label>
                 Jugabilidad:

@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
 const client = new MongoClient('mongodb://127.0.0.1:27017')
-const db = client.db("AH_PARCIAL")// se conecta magicamente y hace un use (mentira no pasa es...xD)
+const db = client.db("AH_PARCIAL")
 const AccountsCollection = db.collection('users')
 const TokensCollection = db.collection('tokens')
 
@@ -14,6 +14,7 @@ async function createAccount(account) {
     ...account
   }
 
+  //Hashea el passoword
   newAccount.password = await bcrypt.hash(account.password, await bcrypt.genSalt(10))
 
   await AccountsCollection.insertOne(newAccount)
@@ -36,7 +37,7 @@ async function deleteAccount(id){
 
 async function verifyAccount(account) {
   await client.connect()
-
+  // Busca la cuenta a traves del email
   let accountData = await AccountsCollection.findOne({ email: account.email })
 
   if (!accountData) {
@@ -52,7 +53,9 @@ async function verifyAccount(account) {
 }
 
 async function createToken(payload) {
+  //crea el token
   const token = jwt.sign(payload, "CLAVE SECRETA")
+  //inserta el token en la base
   TokensCollection.insertOne({ token, email: payload.email })
   return token
 }
@@ -67,12 +70,13 @@ async function createSession(account) {
 
 async function verifyToken(token) {
   await client.connect()
+  // Verificar la validez del token utilizando jwt.verify
   const payload = jwt.verify(token, "CLAVE SECRETA")
-
+  // Busca el token
   if (!await TokensCollection.findOne({ token })) {
     throw { msg: "El token no esta en la base de datos" }
   }
-
+  // Devuelve payload del token si esta todo bien
   return payload
 }
 

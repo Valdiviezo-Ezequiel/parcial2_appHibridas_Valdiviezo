@@ -107,7 +107,7 @@ const UserUpdate = () => {
             </div>
             <div>
               <label>
-                Género:
+                Rol:
                 <input type="text" required onChange={(e) => setRol(e.target.value)} value={rol} />
               </label>
             </div>

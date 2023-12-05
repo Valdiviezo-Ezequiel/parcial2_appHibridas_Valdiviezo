@@ -1,18 +1,18 @@
 import yup from 'yup'
 
-const AccountSchema = yup.object({
+const UsersSchema = yup.object({
   email: yup.string().email().min(4).required(),
   password: yup.string().min(4).required(),
   rol: yup.string().min(2).required()
 });
-const AccountSchema2 = yup.object({
+const UsersSchema2 = yup.object({
   email: yup.string().email().min(4).required(),
   password: yup.string().min(4).required(),
 });
 
 export {
-  AccountSchema,
-  AccountSchema2
+  UsersSchema,
+  UsersSchema2
 }
 
 // export default {

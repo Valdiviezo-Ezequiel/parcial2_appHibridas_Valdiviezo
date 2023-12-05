@@ -9,7 +9,7 @@ const Header = () => {
   const userRole = localStorage.getItem('rol');
   console.log(localStorage.getItem('rol'));
 
-  const commonLinks = [
+  const userLinks = [
     { url: '/Home', texto: 'INICIO' },
     { url: '/GameList', texto: 'LISTA DE JUEGOS' },
     { url: '/Logout', texto: 'CERRAR SESIÓN' },
@@ -17,7 +17,7 @@ const Header = () => {
 
   const judgeLinks = [
     { url: '/Votes', texto: 'VOTAR' },
-    ...commonLinks,
+    ...userLinks,
   ];
 
   const adminLinks = [
@@ -27,7 +27,7 @@ const Header = () => {
     { url: '/UserCreate', texto: 'CREAR USUARIO' },
     { url: '/UserUpdate', texto: 'EDITAR USUARIO' },
     { url: '/UserDelete', texto: 'ELIMINAR USUARIO' },
-    ...commonLinks,
+    ...userLinks,
   ];
 
   // Determinar los enlaces según el rol
@@ -38,7 +38,7 @@ const Header = () => {
   } else if (userRole === 'juez') {
     links = judgeLinks;
   } else {
-    links = commonLinks;
+    links = userLinks;
   }
 
   return (

@@ -1,8 +1,8 @@
-import { AccountSchema, AccountSchema2 } from "../schemas/usersSchemas.js";
-import accountServices from '../services/usersServices.js'
+import { UsersSchema, UsersSchema2 } from "../schemas/usersSchemas.js";
+import usersServices from '../services/usersServices.js'
 
 export function validateAccount(req, res, next) {
-  AccountSchema.validate(req.body, {
+  UsersSchema.validate(req.body, {
     stripUnknown: true,
     abortEarly: false
   })
@@ -16,7 +16,7 @@ export function validateAccount(req, res, next) {
 
 }
 export function validateAccount2(req, res, next) {
-  AccountSchema2.validate(req.body, {
+  UsersSchema2.validate(req.body, {
     stripUnknown: true,
     abortEarly: false
   })
@@ -29,7 +29,7 @@ export function validateAccount2(req, res, next) {
     })
 
 }
-
+// Verifica la validez de un token
 export function verifySession(req, res, next) {
   const token = req.headers['auth-token']
 
@@ -37,7 +37,7 @@ export function verifySession(req, res, next) {
     return res.status(401).json({ msg: "No se encuentra el token" })
   }
 
-  accountServices.verifyToken(token)
+  usersServices.verifyToken(token)
     .then((payload) => {
       req.token = token
       req.session = payload

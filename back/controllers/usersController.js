@@ -1,8 +1,7 @@
 import usersServices from '../services/usersServices.js'
-import accountService from '../services/usersServices.js'
 
 function createAccount(req, res) {
-  accountService.createAccount(req.body)
+  usersServices.createAccount(req.body)
     .then(() => {
       res.status(201).json({ msg: "Cuenta creada con existo!" })
     })
@@ -12,7 +11,7 @@ function createAccount(req, res) {
 }
 
 function getAccount(req, res){
-  accountService.getAccount(req.body)
+  usersServices.getAccount(req.body)
   .then((users) => {
     res.status(200).json(users)
   })
@@ -47,7 +46,7 @@ function deleteAccount(req, res){
 
 
 function login(req, res) {
-  accountService.createSession(req.body)
+  usersServices.createSession(req.body)
     .then((session) => {
       res.status(200).json(session)
     })
@@ -58,7 +57,7 @@ function login(req, res) {
 
 function logout(req, res) {
 
-  accountService.deleteSession(req.token)
+  usersServices.deleteSession(req.token)
     .then(() => {
       res.status(200).json({})
     })
