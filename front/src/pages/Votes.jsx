@@ -59,14 +59,25 @@ const Votes = () => {
 
     const handleFormSubmit = (e) =>{
       e.preventDefault()
-      console.log(JSON.stringify({juez_id, juego_id:selectedGame._id, jugabilidad, arte, sonido, afinidad}))
+
+      const requestData = {
+        juez_id,
+        juego_id: selectedGame._id,
+        jugabilidad,
+        arte,
+        sonido,
+        afinidad,
+      };
+
+      //console.log(JSON.stringify({juez_id, juego_id:selectedGame._id, jugabilidad, arte, sonido, afinidad}))
+      console.log(JSON.stringify(requestData))
     fetch('http://localhost:2023/api/jueces/votar', {
       method: 'POST',
       headers:{
         'Content-type': 'application/json',
         'auth-token': localStorage.getItem('token')
       },
-      body: JSON.stringify({juez_id, juego_id:selectedGame._id, jugabilidad, arte, sonido, afinidad})
+      body: JSON.stringify(requestData)
     })
     .then((res)=>res.json())
     .then((result)=>{

@@ -16,7 +16,7 @@ import juegosServices from "../services/juegosServices.js";
 
     const juego = await juegosServices.juegoExiste(req.body.juego_id) //
     const juez  = await juecesServices.existeJuez(req.body.juez_id) //
-    const voto = {...data, nombre_juez: juez.name, nombre_juego: juego.name}//
+    const voto = {...data, nombre_juez: juez.email, nombre_juego: juego.name}//
 
     juecesServices.votoJuez({...voto}) //
     .then(function (votoJuez) {
