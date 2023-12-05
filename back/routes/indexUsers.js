@@ -9,6 +9,11 @@ const route = express.Router()
 //Crea un usuario
 route.post('/', [validateAccount], accountController.createAccount)
 
+// Trae los usuarios
+route.get('/', accountController.getAccount)
+// Eliminar usuario
+route.delete('/:idUser', accountController.deleteAccount)
+
 /// login
 /// /auth/login
 route.post('/session', [validateAccount2], accountController.login)

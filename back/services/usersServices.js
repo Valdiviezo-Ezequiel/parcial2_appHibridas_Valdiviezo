@@ -19,6 +19,16 @@ async function createAccount(account) {
   await AccountsCollection.insertOne(newAccount)
 }
 
+async function getAccount(){
+  await client.connect()
+  return AccountsCollection.find().toArray();
+}
+
+async function deleteAccount(id){
+  await client.connect()
+  return await AccountsCollection.deleteOne({_id: new ObjectId(id)})
+}
+
 async function verifyAccount(account) {
   await client.connect()
 
@@ -69,6 +79,8 @@ async function deleteSession(token) {
 
 export default {
   createAccount,
+  getAccount,
+  deleteAccount,
   createSession,
   deleteSession,
   verifyToken

@@ -1,3 +1,4 @@
+import usersServices from '../services/usersServices.js'
 import accountService from '../services/usersServices.js'
 
 function createAccount(req, res) {
@@ -8,6 +9,30 @@ function createAccount(req, res) {
     .catch(() => {
       res.status(500).json({ msg: "Fallo al crear la cuenta" })
     })
+}
+
+function getAccount(req, res){
+  accountService.getAccount(req.body)
+  .then((users) => {
+    res.status(200).json(users)
+  })
+  .catch(() => {
+    res.status(500).json({ msg: "fallo al eliminar la cuenta"})
+  })
+}
+
+function deleteAccount(req, res){
+  usersServices.deleteAccount(req.params.idUser)
+  .then((userBorrado) => {
+    if (userBorrado) {
+      res.status(200).json(userBorrado)
+    }else{
+      res.status(404).send('Ah ocurrido un error en el servidor')
+    }
+  })
+  .catch((error) => {
+    res.status(500).send('Ah ocurrido un error: ' + error)
+  })
 }
 
 
@@ -34,6 +59,8 @@ function logout(req, res) {
 
 export default {
   createAccount,
+  getAccount,
+  deleteAccount,
   login,
   logout
 }

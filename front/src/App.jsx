@@ -10,6 +10,7 @@ import JudgeUpdate from './pages/GameUpdate';
 import AppMain from './components/AppMain';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import UserCreate from './pages/UserCreate'
+import UserDelete from './pages/UserDelete'
 
 //Conf router
  const route = createBrowserRouter([
@@ -48,6 +49,10 @@ import UserCreate from './pages/UserCreate'
        {
          path: '/UserCreate',
          element: <UserCreate />
+        },
+       {
+         path: '/UserDelete',
+         element: <UserDelete />
         },
        {
         //  path: '/Login',
