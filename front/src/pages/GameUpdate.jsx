@@ -105,7 +105,7 @@ const JudgeUpdate = () => {
                 <td>{game.edition}</td>
                 <td>{game.members}</td>
                 <td>{game.total_score}</td>
-                <td><button class="update-button" onClick={() => handleEdit(game)}>Editar</button></td>
+                <td><button className='custom-button' onClick={() => handleEdit(game)}>Editar</button></td>
               </tr>
             ))}
             </tbody>
@@ -139,8 +139,8 @@ const JudgeUpdate = () => {
               </label>
             </div>
 
-            <button type="submit">Guardar Cambios</button>
-            <button type="button" onClick={handleCancelEdit}>
+            <button className='custom-button' type="submit">Guardar Cambios</button>
+            <button className='custom-button' type="button" onClick={handleCancelEdit}>
               Cancelar Edición
             </button>
         </form>

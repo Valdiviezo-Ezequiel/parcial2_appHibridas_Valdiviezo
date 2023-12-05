@@ -8,6 +8,7 @@ const JudgeCreate = () => {
   const [members, setMembers] = useState('')
   const [edition, setEdition] = useState('')
   const [total_score, setTotal_score] = useState(0)
+  const [msjBien, setMsjBien] = useState(null);
   const navigate = useNavigate()
 
   const handleFormSubmit = (e) =>{
@@ -24,7 +25,9 @@ const JudgeCreate = () => {
     .then((res)=>res.json())
     .then((result)=>{
       console.log(result)
-      navigate('/GameCreate', {replace: true})
+      navigate('/JudgeCreate', {replace: true})
+      setMsjBien('Juego creado con exito'); // Establecer el mensaje de exito
+      //console.error('Error durante el inicio de sesión:', error);
     })
   }
 
@@ -33,7 +36,9 @@ const JudgeCreate = () => {
       <h2>Crear Juego</h2>
       {/* Display list of games here */}
       <p>¡ Juegos en competencia dentro de la Goto Game Jam !</p>
-
+      <div className='exito'>
+      {msjBien && <p className='msjBien'>{msjBien}</p>} {/* Mostrar mensaje de exito si existe */}
+      </div>
       <div className="contenedorForm">
         <form onSubmit={handleFormSubmit}>
           <div>
@@ -61,7 +66,7 @@ const JudgeCreate = () => {
             </label>
           </div>
 
-          <button type="submit">Enviar</button>
+          <button className='custom-button' type="submit">Enviar</button>
         </form>
         </div>
 
@@ -70,5 +75,3 @@ const JudgeCreate = () => {
 };
 
 export default JudgeCreate;
-
-// Nombre, genero, miembros, edicion, votos totales

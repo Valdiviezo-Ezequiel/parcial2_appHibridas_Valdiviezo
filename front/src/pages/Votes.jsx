@@ -8,6 +8,7 @@ const Votes = () => {
   const juez_id =  localStorage.getItem('id');
   //console.log(juez_id)
   // const juegoID = selectedUser.name
+  const [error, setError] = useState(null);
 
   const [jugabilidad, setJugabilidad] = useState('')
   const [arte, setArte] = useState('')
@@ -83,6 +84,11 @@ const Votes = () => {
     .then((result)=>{
       console.log(result)
       navigate('/Votes', {replace: true})
+      setError(null)
+      })
+      .catch(()=>{
+        setError('Tenga en cuenta que un juez no puede votar 2 veces el mismo juego, y los valores del voto deben ser del 1 al 10'); // Establecer el mensaje de error
+        console.error('Ah ocurrido un error:', error);
       })
     }
 
@@ -92,19 +98,24 @@ const Votes = () => {
         <h2>¡Bienvenido señor/a Juez!</h2>
         <p>Seleccione un juego para votar</p>
 
+      <div className='containerJuezVoto'>
         <tbody>
+          <div className="juego">
             {games.map(game => (
-              <tr key={game._id} className="cardJuego">
+              <tr key={game._id} >
                 <td>{game.name}</td>
-                <td><button class="update-button" onClick={() => handleVote(game)}>Votar</button></td>
+                <td><button class="custom-button" onClick={() => handleVote(game)}>Votar</button></td>
               </tr>
             ))}
+          </div>
         </tbody>
+      </div>
 
 
         {selectedGame && (
         <form onSubmit={handleFormSubmit}>
             <h3>Votar: {selectedGame.name}</h3>
+            {error && <p className='loginError'>{error}</p>} {/* Mostrar mensaje de error si existe */}
             <div>
               <label>
                 Jugabilidad:
@@ -130,8 +141,8 @@ const Votes = () => {
               </label>
             </div>
 
-            <button type="submit">Votar</button>
-            <button type="button" onClick={handleCancelVote}>
+            <button className='custom-button' type="submit">Votar</button>
+            <button className='custom-button' type="button" onClick={handleCancelVote}>
               Cancelar Edición
             </button>
         </form>

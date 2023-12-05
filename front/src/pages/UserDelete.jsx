@@ -67,7 +67,7 @@ const UserDelete = () => {
               <tr key={user._id} className="cardJuego">
                 <td>{user.email}</td>
                 <td>{user.rol}</td>
-                <td><button class="delete-button"onClick={() => handleDelete(user._id)} >Eliminar</button></td>
+                <td><button className='delete-button' onClick={() => handleDelete(user._id)} >Eliminar</button></td>
               </tr>
             ))}
             </tbody>

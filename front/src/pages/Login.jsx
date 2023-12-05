@@ -9,6 +9,7 @@ const Login = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState(null);
   const navigate = useNavigate()
 
   const handleEmailChange = (e)=>{
@@ -43,6 +44,10 @@ const Login = () => {
       localStorage.setItem('id', result.account._id)
       navigate('/home', {replace: true})
     })
+    .catch(()=>{
+      setError('Usuario o contraseña incorrecta'); // Establecer el mensaje de error
+      console.error('Error durante el inicio de sesión:', error);
+    })
   }
 
 
@@ -51,6 +56,7 @@ const Login = () => {
         <div className="loginContainer">
             <img src={Logo} alt="" />
             <h2>Iniciar Sesión</h2>
+            {error && <p className='loginError'>{error}</p>} {/* Mostrar mensaje de error si existe */}
             <form onSubmit={handleFormSubmit}>
               <div>
                 <label>

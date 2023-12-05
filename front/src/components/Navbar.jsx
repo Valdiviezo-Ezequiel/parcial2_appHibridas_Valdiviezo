@@ -27,6 +27,8 @@ const NavBar = ({ links, userRole }) => {
       return true;
     } else if (userRole === 'user' && link.url === '/Home') {
       return true;
+    } else if (userRole === 'juez' && link.url === '/Home') {
+      return true;
     } else if (userRole === 'user' && link.url === '/GameList') {
       return true;
     }

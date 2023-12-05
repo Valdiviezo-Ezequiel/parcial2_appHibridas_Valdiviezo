@@ -356,6 +356,21 @@ footer a {
   padding-top: 2rem;
 }
 
+.votoJuez .containerJuezVoto{
+  margin-left: 34%;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.votoJuez .containerJuezVoto tbody{
+  background-color: #44246c69;
+}
+
+.votoJuez .containerJuezVoto tbody .juego{
+  padding: 2rem;
+}
+
 .contenedorForm{
   display: flex;
 }
@@ -373,7 +388,7 @@ footer a {
 }
 
 .votoJuez input {
-  width: 100%; /* Hace que los campos de entrada ocupen todo el ancho disponible */
+  width: 95%; /* Hace que los campos de entrada ocupen todo el ancho disponible */
   padding: 8px;
   margin-top: 5px; /* Añade un pequeño espacio entre el texto de la etiqueta y el campo de entrada */
 }
@@ -391,6 +406,7 @@ footer a {
 
 .crearJuego .contenedorForm{
   display: flex;
+  margin-top: 2rem;
 }
 
 .crearJuego form {
@@ -502,4 +518,63 @@ footer a {
   display: inline-block;
   font-size: 14px;
   cursor: pointer;
+}
+
+/* ERRORS ---------------------------------------------------------- */
+
+.loginError{
+  color: rgb(233, 36, 36);
+  background-color: #11031f;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.exito{
+  display: flex;
+}
+
+.msjBien{
+  font-size: 1.2rem;
+  margin-top: 3rem;
+  border-bottom: 4px solid #2b7fb7;
+  margin: auto;
+}
+
+/* BOTONES */
+
+.custom-button {
+  background-color: #1b70a9; /* Color de fondo azul */
+  color: #ffffff; /* Color de texto blanco */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  margin: 5px;
+
+  /* Sombras */
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.5); /* Sombra predeterminada */
+  transition: box-shadow 0.3s, transform 0.3s; /* Transiciones para la sombra y la escala */
+
+}
+.custom-button:hover {
+  box-shadow: 0 8px 16px rgba(52, 152, 219, 0.7); /* Sombra aumentada en hover */
+  transform: scale(1.05); /* Escala aumentada en hover */
+}
+.delete-button {
+  background-color: #a91b1b; /* Color de fondo azul */
+  color: #ffffff; /* Color de texto blanco */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  margin: 5px;
+
+  /* Sombras */
+  box-shadow: 0 4px 8px rgba(219, 52, 63, 0.5); /* Sombra predeterminada */
+  transition: box-shadow 0.3s, transform 0.3s; /* Transiciones para la sombra y la escala */
+
+}
+.delete-button:hover {
+  box-shadow: 0 8px 16px rgba(219, 110, 52, 0.7); /* Sombra aumentada en hover */
+  transform: scale(1.05); /* Escala aumentada en hover */
 }

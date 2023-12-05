@@ -6,6 +6,7 @@ const UserCreate = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [rol, setRol] = useState('')
+  const [msjBien, setMsjBien] = useState(null);
   const navigate = useNavigate()
 
   const handleFormSubmit = (e) =>{
@@ -23,6 +24,7 @@ const UserCreate = () => {
     .then((result)=>{
       console.log(result)
       navigate('/UserCreate', {replace: true})
+      setMsjBien('Usuario creado con exito');
     })
   }
 
@@ -31,7 +33,9 @@ const UserCreate = () => {
       <h2>Crear Usuario</h2>
 
       <p>¡ Juegos en competencia dentro de la Goto Game Jam !</p>
-
+      <div className='exito'>
+        {msjBien && <p className='msjBien'>{msjBien}</p>} {/* Mostrar mensaje de exito si existe */}
+      </div>
       <div className="contenedorForm">
         <form onSubmit={handleFormSubmit}>
           <div>
@@ -53,7 +57,7 @@ const UserCreate = () => {
             </label>
           </div>
 
-          <button type="submit">Enviar</button>
+          <button className='custom-button' type="submit">Enviar</button>
         </form>
         </div>
 

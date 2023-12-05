@@ -12,6 +12,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import UserCreate from './pages/UserCreate'
 import UserDelete from './pages/UserDelete'
 import UserUpdate from './pages/UserUpdate'
+import Logout from './pages/Logout'
 
 //Conf router
  const route = createBrowserRouter([
@@ -58,6 +59,10 @@ import UserUpdate from './pages/UserUpdate'
        {
          path: '/UserDelete',
          element: <UserDelete />
+        },
+       {
+         path: '/Logout',
+         element: <Logout />
         },
        {
         //  path: '/Login',
