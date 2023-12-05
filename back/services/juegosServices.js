@@ -18,6 +18,7 @@ async function juegosPorGeneroEdicion(edicion, filter = {}) {
   const filtro = {"edition": edicion} 
   filtro.edition = parseInt(edicion)
 
+  // Si existe un filtro de género (filter.genre tiene un valor), se agrega "genre" al objeto filtro.
   if(filter?.genre) {
     filtro.genre = filter.genre
   }

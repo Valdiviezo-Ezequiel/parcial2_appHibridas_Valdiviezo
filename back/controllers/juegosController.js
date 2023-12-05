@@ -28,9 +28,12 @@ function juegoInformacion(req, res){
 }
 
 function juegosPorEdicion(req, res) {
+  // Llama a la función `juegosPorGeneroEdicion`con los parámetros en la URL (req.params.edicion) y en los
+  // parámetros de consulta (req.query.genre).
   juegosServices.juegosPorGeneroEdicion(req.params.edicion, {"genre": req.query.genre})
     .then(function (juego) {
       console.log(juego)
+      // Ordena los juegos por puntaje en orden descendente.
       const juegosPorPuntaje = juego.sort((a, b) => b.total_score - a.total_score)
       
       res.status(200).json(juegosPorPuntaje);

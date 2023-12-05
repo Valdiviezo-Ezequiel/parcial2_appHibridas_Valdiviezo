@@ -16,10 +16,10 @@ route.delete('/:idUser', accountController.deleteAccount)
 // editar usuario
 route.put('/:idUser', accountController.updateAccount)
 
-/// login
-/// /auth/login
-route.post('/session', [validateAccount2], accountController.login)
-route.delete('/session', [verifySession], accountController.logout)
 
+// auth/login
+route.post('/session', [validateAccount2], accountController.login)
+// logout
+route.delete('/session', [verifySession], accountController.logout)
 
 export default route

@@ -4,9 +4,9 @@ const routeJuegos = express()
 
 
 routeJuegos.get('/lista', juegosController.juegosLista)
-routeJuegos.get('/:juego_id', juegosController.juegoInformacion)
-routeJuegos.get('/edicion/:edicion', juegosController.juegosPorEdicion)
-routeJuegos.get('/:juego_id/promedio', juegosController.promedio)
+routeJuegos.get('/:juego_id', juegosController.juegoInformacion) // Nop
+routeJuegos.get('/edicion/:edicion', juegosController.juegosPorEdicion) // Nop
+routeJuegos.get('/:juego_id/promedio', juegosController.promedio) // Nop
 
 routeJuegos.post('/', juegosController.crearJuego)
 routeJuegos.delete('/:juego_id', juegosController.borrarJuego)
