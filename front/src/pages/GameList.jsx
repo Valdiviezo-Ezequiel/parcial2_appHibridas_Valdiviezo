@@ -9,7 +9,7 @@ const GameList = () => {
   const navigate = useNavigate()
   
   useEffect(()=>{
-    fetch('http://localhost:2025/api/juegos/lista',{
+    fetch('http://localhost:2023/api/juegos/lista',{
       method: 'GET',
       headers: {
         'auth-token': localStorage.getItem('token')

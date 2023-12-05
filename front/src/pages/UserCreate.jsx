@@ -11,7 +11,7 @@ const UserCreate = () => {
   const handleFormSubmit = (e) =>{
     e.preventDefault()
 
-    fetch('http://localhost:2023/api/account', {
+    fetch('http://localhost:2023/api/users/', {
       method: 'POST',
       headers:{
         'Content-type': 'application/json',

@@ -13,7 +13,7 @@ const JudgeCreate = () => {
   const handleFormSubmit = (e) =>{
     e.preventDefault()
 
-    fetch('http://localhost:2025/api/juegos', {
+    fetch('http://localhost:2023/api/juegos', {
       method: 'POST',
       headers:{
         'Content-type': 'application/json',

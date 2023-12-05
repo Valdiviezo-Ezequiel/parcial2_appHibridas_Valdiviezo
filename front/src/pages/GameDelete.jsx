@@ -8,7 +8,7 @@ const JudgeDelete = () => {
   const navigate = useNavigate()
   
   useEffect(()=>{
-    fetch('http://localhost:2025/api/juegos/lista',{
+    fetch('http://localhost:2023/api/juegos/lista',{
       method: 'GET',
       headers: {
         'auth-token': localStorage.getItem('token')
@@ -36,7 +36,7 @@ const JudgeDelete = () => {
 
   const handleDelete = (gameId) => {
     // Envia una solicitud a la API para eliminar el juego
-    fetch(`http://localhost:2025/api/juegos/${gameId}`, {
+    fetch(`http://localhost:2023/api/juegos/${gameId}`, {
       method: 'DELETE',
       headers: {
         // 'Content-Type': 'application/json',

@@ -22,18 +22,25 @@ const Login = () => {
   const handleFormSubmit = (e) =>{
     e.preventDefault()
 
-    fetch('http://localhost:2023/api/session', {
+    fetch('http://localhost:2023/api/users/session', {
       method: 'POST',
       headers:{
         'Content-type': 'application/json'
       },
       body: JSON.stringify({email, password})
     })
-    .then((res)=>res.json())
+    .then((res)=>
+      // if(!res.ok){
+      //   console.log("esta todo mal")
+      //   throw new Error('Usuario o contraseña incorrecta');
+      // }
+      res.json()
+    )
     .then((result)=>{
       console.log(result)
       localStorage.setItem('token', result.token)
-      //navigate('/home', {replace: true})
+      localStorage.setItem('rol', result.account.rol)
+      navigate('/home', {replace: true})
     })
   }
 

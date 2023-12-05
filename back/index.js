@@ -9,6 +9,6 @@ app.use(express.json()) // interpreta el body cuando viene un JSON
 routerIndex(app)
 
 
-app.listen(2025, function () {
-    console.log("El servidor esta levantado! http://localhost:2025")
+app.listen(2023, function () {
+    console.log("El servidor esta levantado! http://localhost:2023")
   })

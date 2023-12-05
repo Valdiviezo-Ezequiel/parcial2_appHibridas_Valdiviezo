@@ -5,17 +5,39 @@ import logo from '../assets/logo.png';
 
 const Header = () => {
   console.log("renderizar el Header");
-  const [links] = useState([
+
+  const userRole = localStorage.getItem('rol');
+  console.log(localStorage.getItem('rol'));
+
+  const commonLinks = [
     { url: '/Home', texto: 'INICIO' },
     { url: '/GameList', texto: 'LISTA DE JUEGOS' },
+    { url: '/Logout', texto: 'CERRAR SESIÓN' },
+  ];
+
+  const judgeLinks = [
     { url: '/Votes', texto: 'VOTAR' },
+    ...commonLinks,
+  ];
+
+  const adminLinks = [
     { url: '/JudgeCreate', texto: 'CREAR JUEGO' },
     { url: '/JudgeUpdate', texto: 'MODIFICAR JUEGO' },
     { url: '/JudgeDelete', texto: 'ELIMINAR JUEGO' },
     { url: '/UserCreate', texto: 'CREAR USUARIO' },
-    // { url: '/Login', texto: 'INICIAR SESIÓN' },
-    { url: '/Logout', texto: 'CERRAR SESIÓN' },
-  ]);
+    ...commonLinks,
+  ];
+
+  // Determinar los enlaces según el rol
+  let links = [];
+
+  if (userRole === 'admin') {
+    links = adminLinks;
+  } else if (userRole === 'juez') {
+    links = judgeLinks;
+  } else {
+    links = commonLinks;
+  }
 
   return (
     <header>
@@ -23,7 +45,7 @@ const Header = () => {
         <h1 className="hola">GOTO Game JAM</h1>
         <img className="logo" src={logo} alt="GOTO Game JAM" />
       </div>
-      <NavBar links={links} />
+      <NavBar links={links} userRole={userRole} />
     </header>
   );
 };
