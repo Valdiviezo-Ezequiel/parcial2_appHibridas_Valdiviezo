@@ -19,6 +19,8 @@ const NavBar = ({ links, userRole }) => {
       return true;
     } else if (userRole === 'admin' && link.url === '/UserCreate') {
       return true;
+    } else if (userRole === 'admin' && link.url === '/UserUpdate') {
+      return true;
     } else if (userRole === 'admin' && link.url === '/UserDelete') {
       return true;
     } else if (userRole === 'juez' && link.url === '/Votes') {

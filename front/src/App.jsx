@@ -11,6 +11,7 @@ import AppMain from './components/AppMain';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import UserCreate from './pages/UserCreate'
 import UserDelete from './pages/UserDelete'
+import UserUpdate from './pages/UserUpdate'
 
 //Conf router
  const route = createBrowserRouter([
@@ -49,6 +50,10 @@ import UserDelete from './pages/UserDelete'
        {
          path: '/UserCreate',
          element: <UserCreate />
+        },
+       {
+         path: '/UserUpdate',
+         element: <UserUpdate />
         },
        {
          path: '/UserDelete',

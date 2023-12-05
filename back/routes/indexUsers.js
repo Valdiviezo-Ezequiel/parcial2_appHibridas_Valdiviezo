@@ -13,6 +13,8 @@ route.post('/', [validateAccount], accountController.createAccount)
 route.get('/', accountController.getAccount)
 // Eliminar usuario
 route.delete('/:idUser', accountController.deleteAccount)
+// editar usuario
+route.put('/:idUser', accountController.updateAccount)
 
 /// login
 /// /auth/login

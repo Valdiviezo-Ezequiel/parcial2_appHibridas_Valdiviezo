@@ -25,6 +25,7 @@ const Header = () => {
     { url: '/JudgeUpdate', texto: 'MODIFICAR JUEGO' },
     { url: '/JudgeDelete', texto: 'ELIMINAR JUEGO' },
     { url: '/UserCreate', texto: 'CREAR USUARIO' },
+    { url: '/UserUpdate', texto: 'EDITAR USUARIO' },
     { url: '/UserDelete', texto: 'ELIMINAR USUARIO' },
     ...commonLinks,
   ];

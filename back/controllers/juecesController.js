@@ -6,12 +6,12 @@ import juegosServices from "../services/juegosServices.js";
     const data = {
       "juez_id": req.body.juez_id,
       "juego_id": req.body.juego_id,
-      // "nombre_juez": req.body.nombre_juez,
-      // "nombre_juego": req.body.nombre_juego,
       "jugabilidad": req.body.jugabilidad,
       "arte": req.body.arte,
       "sonido": req.body.sonido,
       "afinidad": req.body.afinidad
+      // "nombre_juez": req.body.nombre_juez,
+      // "nombre_juego": req.body.nombre_juego,
     }
 
     const juego = await juegosServices.juegoExiste(req.body.juego_id) //

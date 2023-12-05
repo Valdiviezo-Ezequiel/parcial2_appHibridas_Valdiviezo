@@ -398,6 +398,7 @@ footer a {
   width: 650px;
   background-color: rgb(30, 15, 148); /* Puedes cambiar esto al color que prefieras */
   padding: 20px; /* Añade un espacio interno alrededor del formulario */
+  border-radius: 1rem;
 }
 
 .crearJuego label {
@@ -406,13 +407,14 @@ footer a {
 }
 
 .crearJuego input {
-  width: 100%; /* Hace que los campos de entrada ocupen todo el ancho disponible */
+  width: 95%; /* Hace que los campos de entrada ocupen todo el ancho disponible */
   padding: 8px;
   margin-top: 5px; /* Añade un pequeño espacio entre el texto de la etiqueta y el campo de entrada */
 }
 
 .crearJuego button {
   margin-top: 10px; /* Añade espacio entre el último campo de entrada y el botón de envío */
+  padding: 5px;
 }
 
 /* actualizar juego ------------------------------------------------------------------------------------------ */
@@ -425,6 +427,8 @@ footer a {
 
 .actualizarJuego .contenedorForm{
   display: flex;
+  margin-left: 5.5rem;
+  margin-top: 3rem;
 }
 
 .actualizarJuego form {
@@ -448,7 +452,21 @@ footer a {
 .actualizarJuego button {
   margin-top: 10px; /* Añade espacio entre el último campo de entrada y el botón de envío */
 }
+/* Borrar/editar usurio ------------------------------------------------------------------------------------------ */
+.editDelete{
+  text-align: center;
+  background-color: #05005b;
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+}
 
+.editDelete table{
+  margin: auto;
+  margin-top: 2rem;
+}
+.editDelete form {
+  margin-top: 2rem;
+}
 /* Borrar juego ------------------------------------------------------------------------------------------ */
 .eliminarJuego {
   text-align: center;

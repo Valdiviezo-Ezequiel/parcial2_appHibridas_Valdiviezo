@@ -24,6 +24,11 @@ async function getAccount(){
   return AccountsCollection.find().toArray();
 }
 
+async function updateAccount(data, id){
+  await client.connect()
+  return await AccountsCollection.updateOne({_id: new ObjectId(id)}, {$set: {...data}})
+}
+
 async function deleteAccount(id){
   await client.connect()
   return await AccountsCollection.deleteOne({_id: new ObjectId(id)})
@@ -80,6 +85,7 @@ async function deleteSession(token) {
 export default {
   createAccount,
   getAccount,
+  updateAccount,
   deleteAccount,
   createSession,
   deleteSession,

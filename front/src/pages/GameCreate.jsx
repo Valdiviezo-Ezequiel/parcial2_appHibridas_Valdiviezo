@@ -24,7 +24,7 @@ const JudgeCreate = () => {
     .then((res)=>res.json())
     .then((result)=>{
       console.log(result)
-      navigate('/home', {replace: true})
+      navigate('/GameCreate', {replace: true})
     })
   }
 
@@ -35,29 +35,6 @@ const JudgeCreate = () => {
       <p>¡ Juegos en competencia dentro de la Goto Game Jam !</p>
 
       <div className="contenedorForm">
-        {/* <form onSubmit={handleFormSubmit}>
-            <label>
-            Name:
-            <input type="text" name="name" value="" onChange="" />
-            </label>
-            <br />
-            <label>
-            Genre:
-            <input type="text" name="genre" value="" onChange="" />
-            </label>
-            <br />
-            <label>
-            Members:
-            <input type="text" name="members" value="" onChange="" />
-            </label>
-            <br />
-            <label>
-            Edition:
-            <input type="number" name="edition" value="" onChange="" />
-            </label>
-            <br />
-            <button type="submit">Enviar</button>
-        </form> */}
         <form onSubmit={handleFormSubmit}>
           <div>
             <label>

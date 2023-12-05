@@ -52,8 +52,8 @@ const UserDelete = () => {
       };
 
   return (
-    <div>
-        <h2>hola</h2>
+    <div className='editDelete'>
+        <h2>Eliminar Usuario</h2>
 
         <table class="game-list">
             <thead>

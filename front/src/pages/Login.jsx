@@ -40,6 +40,7 @@ const Login = () => {
       console.log(result)
       localStorage.setItem('token', result.token)
       localStorage.setItem('rol', result.account.rol)
+      localStorage.setItem('id', result.account._id)
       navigate('/home', {replace: true})
     })
   }

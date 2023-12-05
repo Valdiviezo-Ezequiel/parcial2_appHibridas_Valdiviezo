@@ -21,6 +21,16 @@ function getAccount(req, res){
   })
 }
 
+function updateAccount(req, res){
+  usersServices.updateAccount(req.body, req.params.idUser)
+  .then(respuesta => {
+    res.status(200).json(respuesta)
+  })
+  .catch( error => {
+      res.status(500).json(error)
+  })
+}
+
 function deleteAccount(req, res){
   usersServices.deleteAccount(req.params.idUser)
   .then((userBorrado) => {
@@ -60,6 +70,7 @@ function logout(req, res) {
 export default {
   createAccount,
   getAccount,
+  updateAccount,
   deleteAccount,
   login,
   logout

@@ -22,7 +22,7 @@ const UserCreate = () => {
     .then((res)=>res.json())
     .then((result)=>{
       console.log(result)
-      navigate('/home', {replace: true})
+      navigate('/UserCreate', {replace: true})
     })
   }
 
