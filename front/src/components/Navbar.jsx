@@ -10,7 +10,6 @@ const NavBar = ({ links, userRole }) => {
     if (link.url === '/Logout') {
       return true;
     }
-
     if (userRole === 'admin' && link.url === '/JudgeCreate') {
       return true;
     } else if (userRole === 'admin' && link.url === '/JudgeUpdate') {
