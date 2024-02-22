@@ -348,6 +348,14 @@ footer a {
   background-color: rgb(44, 11, 85);
 }
 
+/* Lista votos ------------------------------------------------------------------------------------------*/
+.listaVotos{
+  text-align: center;
+  background-color: #05005b;
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+}
+
 /* Voto juez ------------------------------------------------------------------------------------------ */
 .votoJuez{
   text-align: center;
@@ -396,6 +404,39 @@ footer a {
 .votoJuez button {
   margin-top: 10px; /* Añade espacio entre el último campo de entrada y el botón de envío */
 }
+
+/* Panel admin ------------------------------------------------------------------------------------------ */
+.panelAdmin{
+  text-align: center;
+  background-image: url('./assets/fondopanel.png');
+  background-repeat: no-repeat;
+  background-size: 100%; /* Esto para responsive se comenta */
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  border-top: 4px solid #2b7fb7;
+  box-shadow: 0px -20px 20px -20px rgb(39, 134, 197); 
+}
+
+.panelAdmin .listaLink a{
+  margin: 1rem;
+  color: white;
+  text-decoration: none;
+
+  background-color: #11031f;
+  border-radius: 10px;
+  border: 2px solid rgb(116, 53, 116);
+  padding: 1rem;
+}
+.panelAdmin .listaLink a:hover{
+  box-shadow: 0px 0px 20px 2px rgb(187, 47, 209);
+}
+
+.panelAdmin .listaLink{
+  margin-top: 3rem;
+}
+
+
+
 /* crear juego ------------------------------------------------------------------------------------------ */
 .crearJuego{
   text-align: center;

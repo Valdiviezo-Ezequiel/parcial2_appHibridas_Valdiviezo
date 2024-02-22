@@ -42,7 +42,15 @@ const Login = () => {
       localStorage.setItem('token', result.token)
       localStorage.setItem('rol', result.account.rol)
       localStorage.setItem('id', result.account._id)
-      navigate('/home', {replace: true})
+      if(result.account.rol == "admin"){
+      navigate('/PanelAdmin', {replace: true})
+      }
+      if(result.account.rol == "user"){
+      navigate('/Home', {replace: true})
+      }
+      if(result.account.rol == "juez"){
+      navigate('/Votes', {replace: true})
+      }
     })
     .catch(()=>{
       setError('Usuario o contraseña incorrecta'); // Establecer el mensaje de error

@@ -12,6 +12,7 @@ const Header = () => {
   const userLinks = [
     { url: '/Home', texto: 'INICIO' },
     { url: '/GameList', texto: 'LISTA DE JUEGOS' },
+    { url: '/VotesPage', texto: 'LISTA DE VOTOS' },
     { url: '/Logout', texto: 'CERRAR SESIÓN' },
   ];
 
@@ -21,6 +22,7 @@ const Header = () => {
   ];
 
   const adminLinks = [
+    { url: '/PanelAdmin', texto: 'PANEL ADMINISTRADOR' },
     { url: '/JudgeCreate', texto: 'CREAR JUEGO' },
     { url: '/JudgeUpdate', texto: 'MODIFICAR JUEGO' },
     { url: '/JudgeDelete', texto: 'ELIMINAR JUEGO' },

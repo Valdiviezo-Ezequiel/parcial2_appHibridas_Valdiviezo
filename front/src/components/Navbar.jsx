@@ -15,6 +15,9 @@ const NavBar = ({ links, userRole }) => {
     } else if (userRole === 'admin' && link.url === '/JudgeUpdate') {
       return true;
     } else if (userRole === 'admin' && link.url === '/JudgeDelete') {
+    } else if (userRole === 'admin' && link.url === '/PanelAdmin') {
+      return true;
+    } else if (userRole === 'admin' && link.url === '/JudgeDelete') {
       return true;
     } else if (userRole === 'admin' && link.url === '/UserCreate') {
       return true;
@@ -30,8 +33,9 @@ const NavBar = ({ links, userRole }) => {
       return true;
     } else if (userRole === 'user' && link.url === '/GameList') {
       return true;
+    } else if (userRole === 'user' && link.url === '/VotesPage') {
+      return true;
     }
-
     return false;
   };
 
