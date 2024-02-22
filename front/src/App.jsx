@@ -12,6 +12,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import UserCreate from './pages/UserCreate'
 import UserDelete from './pages/UserDelete'
 import UserUpdate from './pages/UserUpdate'
+import VotesPage from './pages/VotesPage'
+import PanelAdmin from './pages/PanelAdmin'
 import Logout from './pages/Logout'
 
 //Conf router
@@ -32,9 +34,17 @@ import Logout from './pages/Logout'
          path: '/GameList',
          element: <GameList />
         },
+       {
+         path: '/VotesPage',
+         element: <VotesPage />
+        },
         {
           path: '/Votes',
           element: <Votes />
+        },
+        {
+          path: '/PanelAdmin',
+          element: <PanelAdmin />
         },
         {
           path: '/JudgeCreate',
